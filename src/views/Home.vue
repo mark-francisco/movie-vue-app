@@ -29,6 +29,7 @@
         <p>ID: {{ movie.id }}</p>
         <p>Title: {{ movie.title }}</p>
         <button v-on:click="showMovie(movie.id)">more info:</button>
+        <button v-on:click="deleteMovie(movie.id)">DELETE THIS MOVIE!</button>
         <hr />
       </ul>
     </div>
@@ -78,6 +79,16 @@ export default {
       axios.get(`/api/movies/${id}`).then((res) => {
         this.currentMovie = res.data;
         console.log("current movie:", this.currentMovie);
+      });
+    },
+    deleteMovie: function (id) {
+      for (var i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].id === id) {
+          this.movies.splice(i, 1);
+        }
+      }
+      axios.delete(`/api/movies/${id}`).then((res) => {
+        console.log(res.data);
       });
     },
   },
