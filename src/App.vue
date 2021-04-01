@@ -11,6 +11,10 @@
       <!-- <a href="/login">Log In!</a> -->
       |
       <router-link to="/logout">Log Out!</router-link>
+      |
+      <router-link to="/movies">All Movies</router-link>
+      |
+      <router-link to="/movies/new">Add new Movie</router-link>
     </div>
     <router-view />
   </div>

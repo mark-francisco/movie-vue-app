@@ -77,7 +77,7 @@ export default {
     indexMovies: function () {
       axios.get("/api/movies").then((res) => {
         this.movies = res.data;
-        console.log("INDEX of Movies:", this.movies);
+        // console.log("INDEX of Movies:", this.movies);
       });
     },
     createMovie: function () {
