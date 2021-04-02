@@ -3,24 +3,43 @@
     <h2>Create a Movie!</h2>
     <!-- create input fields -->
     <!-- link those input fields to params variable using v-model -->
+
     <form>
-      <label for="title">Title:</label>
-      <input v-model="newMovieTitle" type="text" id="title" name="title" />
-      <br />
-      <label for="year">Year:</label>
-      <input v-model="newMovieYear" type="text" id="year" name="year" />
-      <br />
-      <label for="plot">Plot:</label>
-      <input v-model="newMoviePlot" type="text" id="plot" name="plot" />
-      <br />
-      <label for="director">Director:</label>
-      <input v-model="newMovieDirector" type="text" id="director" name="director" />
-      <br />
-      <label for="english">English:</label>
-      <input v-model="newMovieEnglish" type="text" id="english" name="english" />
-      <br />
+      <div class="row">
+        <div class="input-field col s6">
+          <input v-model="newMovieTitle" id="title" type="text" />
+          <label for="title">Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input v-model="newMovieYear" type="text" id="year" />
+          <label for="year">Year:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="plot">Plot:</label>
+          <input v-model="newMoviePlot" type="text" id="plot" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="director">Director:</label>
+          <input v-model="newMovieDirector" type="text" id="director" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="english">English:</label>
+          <input v-model="newMovieEnglish" type="text" id="english" />
+        </div>
+      </div>
+      <button v-on:click="createMovie()" class="btn waves-effect waves-light">
+        Add Movie!
+        <i class="material-icons right"></i>
+      </button>
     </form>
-    <button v-on:click="createMovie()">Create!</button>
   </div>
 </template>
 <style></style>
