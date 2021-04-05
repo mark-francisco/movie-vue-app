@@ -20,7 +20,10 @@
       <div class="row">
         <div class="input-field col s6">
           <label for="plot">Plot:</label>
-          <input v-model="newMoviePlot" type="text" id="plot" />
+          <input v-model="newMoviePlot" type="text" id="plot" maxlength="50" />
+          <small class="text-danger" v-if="newMoviePlot.length > 0 && newMoviePlot.length <= 50">
+            {{ 50 - newMoviePlot.length }} characters left!
+          </small>
         </div>
       </div>
       <div class="row">
