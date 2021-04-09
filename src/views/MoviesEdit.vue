@@ -2,31 +2,42 @@
   <div class="movies-edit">
     <form v-on:submit.prevent="updateMovie(movie)">
       <h1>Movie Details:</h1>
-      <div class="form-group">
+      <label for="title" class="form-group">
         Title:
-        <input type="text" v-model="movie.title" />
-      </div>
-      <div class="form-group">
+        <input id="title" autofocus type="text" v-model="movie.title" />
+      </label>
+      <label for="year" class="form-group">
         Year:
-        <input type="text" v-model="movie.year" />
-      </div>
-      <div class="form-group">
+        <input id="year" type="text" v-model="movie.year" />
+      </label>
+      <label for="plot" class="form-group">
         Plot:
-        <input type="text" v-model="movie.plot" />
-      </div>
-      <div class="form-group">
+        <input id="plot" type="text" v-model="movie.plot" />
+      </label>
+      <label for="director" class="form-group">
         Director:
-        <input type="text" v-model="movie.director" />
-      </div>
-      <div class="form-group">
+        <input id="director" type="text" v-model="movie.director" />
+      </label>
+      <label for="english" class="form-group">
         English:
-        <input type="text" v-model="movie.english" />
+        <input id="english" type="text" v-model="movie.english" />
+      </label>
+      <div>
+        <input type="submit" value="Update Movie!" />
       </div>
-      <input type="submit" value="Update Movie!" />
     </form>
   </div>
 </template>
-<style></style>
+<style>
+.form-group {
+  display: block;
+  width: 75%;
+}
+form {
+  margin: 50px;
+  padding: 20px;
+}
+</style>
 <script>
 import axios from "axios";
 

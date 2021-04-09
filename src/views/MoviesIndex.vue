@@ -13,13 +13,7 @@
       </div>
     </div>
     <div class="container">
-      <div
-        is="transition-group"
-        class="row"
-        appear
-        enter-active-class="animated bounceInDown"
-        leave-active-class="animated fadeOut"
-      >
+      <div is="transition-group" class="row" appear enter-active-class="animated fadeIn">
         <div v-for="movie in orderBy(filterBy(movies, titleFilter, 'title'), 'title')" v-bind:key="movie.id">
           <div class="card border-dark mb-4" style="max-width: 22rem">
             <img
